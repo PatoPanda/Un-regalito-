@@ -1,0 +1,78 @@
+body {
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Para que las frases no creen barras de desplazamiento */
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.neon-title {
+    color: white;
+    font-size: 28px;
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d;
+    margin-bottom: 30px;
+}
+
+.heart-btn {
+    font-size: 110px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.heart-btn:active {
+    transform: scale(0.9); /* Efecto de rebote al tocar */
+}
+
+.latir {
+    animation: heartbeat 0.8s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#status {
+    color: #888;
+    margin-top: 15px;
+}
+
+/* Estilo para las frases flotantes */
+.frase-flotante {
+    position: absolute;
+    position: fixed;
+    color: #ff4d6d;
+    font-weight: bold;
+    font-size: 20px;
+    pointer-events: none;
+    text-shadow: 0 0 8px rgba(255, 77, 109, 0.8);
+    animation: flotarYBorrar 4s linear forwards;
+    white-space: nowrap;
+}
+
+@keyframes flotarYBorrar {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1.1);
+    }
+    100% {
+        transform: translateY(-200px) rotate(10deg);
+        opacity: 0;
+    }
+}
