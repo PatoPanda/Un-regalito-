@@ -1,0 +1,47 @@
+body {
+    background-color: #000000; /* Fondo totalmente negro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+.heart-btn {
+    font-size: 100px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Animación de latido cuando suena la música */
+.latir {
+    animation: heartbeat 0.8s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Estilo para tus frases románticas */
+#status {
+    color: #ff4d6d; /* Color rosa brillante */
+    font-size: 22px;
+    margin-top: 25px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d; /* Efecto neón */
+    min-height: 40px;
+}
+
+#youtube-player {
+    display: none; /* Esconde el video */
+}
